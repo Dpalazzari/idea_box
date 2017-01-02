@@ -1,8 +1,9 @@
 class Admin::UsersController < Admin::BaseController
 
   def index
-    @search = User.search(params[:q])
-    @users = @search.result
+    # @search = User.search(params[:q])
+    # @users = @search.result
+    @users = User.all.page(params[:page]).per(2)
   end
 
   def destroy

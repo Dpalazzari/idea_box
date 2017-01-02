@@ -1,14 +1,19 @@
 <%= link_to "Create New Category", new_admin_category_path, class: 'btn btn-warning btn-sm'%><br><br>
 <h1>All Categories</h1><br><br>
 
-  <%= search_form_for [:admin, @search] do |f| %>
-   <%= f.label :name_cont, 'Name Contains'%>
-   <%= f.text_field :name_cont %>
+  <div class='container'>
+    <div class='col-md-6'>
+      <%= search_form_for [:admin, @search] do |f| %>
+       <%= f.label :name_cont, 'Name Contains'%>
+       <%= f.text_field :name_cont %>
 
-   <%= f.submit "Search", class:'btn btn-danger btn-xs' %>
- <% end %>
- <br>
- <br>
+       <%= f.submit "Search", class:'btn btn-danger btn-xs' %>
+     <% end %>
+   </div>
+  </div>
+   <br>
+   <br>
+
 
   <div class='container'>
   <% @categories.each do |category| %>
