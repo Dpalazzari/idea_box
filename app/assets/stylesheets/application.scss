@@ -1,0 +1,37 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body{
+  background-image: linear-gradient(to right, #434343 , #000000 65%);
+  font-family: courier;
+  color: #f29d38;
+}
+// url("http://1.bp.blogspot.com/-hrGFLyJba3U/Uh90QVFp01I/AAAAAAAAFoY/F5R7LBbTox0/s1600/Background-Picture-Html.jpg")
+#picture{
+ height: 50px;
+ width: 50px;
+}
+
+a{
+  font-weight: bolder;
+  color: #f29d38;
+  font-size: 22px;
+  text-decoration: none;
+}
+a:hover{
+  color: purple;
+  text-decoration: none;
+}
+.hg-pic{
+  height: 500px;
+  width: 500px;
+}
+.giphy-img{
+  height: 500px;
+  width: 700px;
+}
+#user-login{
+  font-size: 14px;
+}
+#greeting {
+  text-align: right;
+}

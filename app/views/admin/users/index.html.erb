@@ -1,0 +1,19 @@
+<h1>All Users</h1>
+
+  <%= search_form_for [:admin, @search] do |f| %>
+    <%= f.label :name_cont, 'Name Contains'%>
+    <%= f.text_field :name_cont %>
+
+    <%= f.submit "Search", class:'btn btn-danger btn-xs' %>
+  <% end %>
+  <br>
+  <br>
+
+  <div class='container'>
+    <% @users.each do |user| %>
+      <div class='col-md-4'>
+      <%= link_to user.name, user_path(user) %><br>
+        <%= link_to 'Delete', admin_user_path(user), method: :delete, class:'btn btn-danger btn-xs'%><br><br>
+      </div>
+    <% end %>
+  </div>
