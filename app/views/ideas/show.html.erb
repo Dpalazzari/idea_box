@@ -1,0 +1,18 @@
+<div class='container'>
+  <div class='col-md-4'>
+    <div class='container'>
+    <li><strong>Name:</strong> <%= @idea.name %></li>
+  <br>
+    <li><strong>Category:</strong> <%= @category %></li>
+  <br>
+
+    <li><strong>Description:</strong> <%= @idea.description %></li>
+  <br>
+  <div class="btn-group" role="group" aria-label="...">
+    <%= link_to "Return", user_path(@idea.user.id), class: 'btn btn-danger btn-sm'%>
+    <%= link_to "Edit", edit_user_idea_path(@idea.user.id, @idea), class: 'btn btn-danger btn-sm'%>
+    <%= link_to "Delete Idea", user_idea_path(@idea.user.id, @idea), method: :delete, class: 'btn btn-danger btn-sm'%>
+  </div>
+<br>
+<br>
+<br>
