@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
-    resources :ideas, only: [:new, :create, :show]
+    resources :ideas, only: [:new, :create, :show, :edit, :update]
   end
 
   root to: 'sessions#new'
@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :destroy]
-    resources :categories, only: [:index, :new, :create, :edit, :destroy]
+    resources :categories, only: [:index, :new, :create, :destroy]
   end
 end

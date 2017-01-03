@@ -24,6 +24,21 @@ class IdeasController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @idea = @user.ideas.find(params[:id])
+    @categories = Category.all
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @idea = @user.ideas.find(params[:id])
+    @idea.update(idea_params)
+
+    flash[:success] = "#{@idea.name} successfully updated"
+    redirect_to user_idea_path(@user, @idea)
+  end
+
   private
 
   def category

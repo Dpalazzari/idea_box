@@ -1,0 +1,29 @@
+<div class='container'>
+  <h1>Make a new idea</h1>
+</div><br>
+
+  <%= form_for [@user, @idea] do |f| %>
+  <div class='container'>
+    <div class='list-group'>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='list-group'>
+      <%= f.label :description %><br>
+      <%= f.text_area :description, size: "30x5"%>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='list-group'>
+      <%= f.label :category %><br>
+      <%= f.collection_select :category_id, @categories, :id, :name, include_blank: true %>
+    </div>
+  </div>
+  <div class='container'>
+    <%= f.submit "Create" %>
+  </div>
+  <% end %>
